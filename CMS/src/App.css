@@ -191,7 +191,6 @@ h1 {
   font-size: 3rem; 
   background: #3F5C40;
 }
-
 .landingBtn:hover {
   background-color: #084949;
   cursor: pointer;
@@ -422,12 +421,12 @@ h1 {
 }
 
 .feature-intro-section h2 {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: bold;
 }
 
 .feature-intro-section .lead {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #6c757d; 
 }
 

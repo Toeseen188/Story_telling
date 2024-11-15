@@ -5,7 +5,7 @@ import { fadeIn } from "../../variants";
 import Romance from '../../assets/couple1.jpg'
 import Adventure from '../../assets/Adventure2.jpg'
 import Mystery from '../../assets/A&S2.jpg'
-import Comedy from '../../assets/Comedy1.jpg'
+import Fantasy from '../../assets/fantasy1.jpg'
 
 const ExploreCategories = () => {
   const cardStyle = {
@@ -63,7 +63,7 @@ const ExploreCategories = () => {
                 Romance
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Romantic Escapes</h5>
-              <p className="card-text mb-2 text-center">Fall in love with enchanted tales.</p>
+              <p className="card-text mb-2 text-center">Swoon-worthy love stories to make you blush</p>
               <Link
                 to="/romance"
                 className="btn text-white text-decoration-none mt-2"
@@ -94,7 +94,7 @@ const ExploreCategories = () => {
                 Adventure
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Epic Quests</h5>
-              <p className="card-text mb-2 text-center">Join thrilling adventures across realms.</p>
+              <p className="card-text mb-2 text-center">Thrilling journeys to unknown lands</p>
               <Link
                 to="/adventure"
                 className="btn text-white text-decoration-none mt-2"
@@ -125,7 +125,7 @@ const ExploreCategories = () => {
                 Mystery
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Unsolved Mysteries</h5>
-              <p className="card-text mb-2 text-center">Unravel the secrets behind hidden truths.</p>
+              <p className="card-text mb-2 text-center">Whodunits to keep you guessing</p>
               <Link
                 to="/mystery"
                 className="btn text-white text-decoration-none mt-2"
@@ -136,7 +136,7 @@ const ExploreCategories = () => {
           </div>
         </motion.div>
 
-        {/* Comedy Category */}
+        {/* fantasy Category */}
         <motion.div
           className="col"
           variants={fadeIn("down", 0.8)}
@@ -145,7 +145,7 @@ const ExploreCategories = () => {
         >
           <div className="card" style={cardStyle}>
             <img
-              src={Comedy}
+              src={Fantasy}
               className="card-img-top"
               alt="Comedy"
               style={imageStyle}
@@ -154,8 +154,8 @@ const ExploreCategories = () => {
               <span className="badge mb-3"  style={{ background: "#3f929a" }}>
                 Comedy
               </span>
-              <h5 className="card-title fw-bold mb-0 text-center">Laugh Out Loud</h5>
-              <p className="card-text mb-2 text-center">Experience hilarious adventures and jokes.</p>
+              <h5 className="card-title fw-bold mb-0 text-center">Magical Realms</h5>
+              <p className="card-text mb-2 text-center">Quests, magic, and mythical creatures</p>
               <Link
                 to="/comedy"
                 className="btn text-white text-decoration-none mt-2"
