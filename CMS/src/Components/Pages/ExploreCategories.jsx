@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants"; 
 import Romance from '../../assets/couple1.jpg'
 import Adventure from '../../assets/Adventure2.jpg'
+import Mystery from '../../assets/A&S2.jpg'
+import Comedy from '../../assets/Comedy1.jpg'
 
 const ExploreCategories = () => {
   const cardStyle = {
@@ -24,7 +26,7 @@ const ExploreCategories = () => {
   };
 
   const imageStyle = {
-    height: "150px",
+    height: "180px",
     objectFit: "cover",
     borderRadius: "10px 10px 0 0",
   };
@@ -57,14 +59,14 @@ const ExploreCategories = () => {
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge" style={{ background: "#3f929a" }}>
+              <span className="badge mb-3" style={{ background: "#3f929a" }}>
                 Romance
               </span>
-              <h5 className="card-title fw-bold mb-0">Romantic Escapes</h5>
-              <p className="card-text mb-0">Fall in love with enchanted tales.</p>
+              <h5 className="card-title fw-bold mb-0 text-center">Romantic Escapes</h5>
+              <p className="card-text mb-2 text-center">Fall in love with enchanted tales.</p>
               <Link
                 to="/romance"
-                className="btn text-white text-decoration-none"
+                className="btn text-white text-decoration-none mt-2"
                 style={{ background: "#3f929a" }}
               >
                 Explore Now
@@ -88,15 +90,15 @@ const ExploreCategories = () => {
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge" style={{ background: "#ff6f61" }}>
+              <span className="badge mb-3"  style={{ background: "#3f929a" }}>
                 Adventure
               </span>
-              <h5 className="card-title fw-bold mb-0">Epic Quests</h5>
-              <p className="card-text mb-0">Join thrilling adventures across realms.</p>
+              <h5 className="card-title fw-bold mb-0 text-center">Epic Quests</h5>
+              <p className="card-text mb-2 text-center">Join thrilling adventures across realms.</p>
               <Link
                 to="/adventure"
-                className="btn text-white text-decoration-none"
-                style={{ background: "#ff6f61" }}
+                className="btn text-white text-decoration-none mt-2"
+                 style={{ background: "#3f929a" }}
               >
                 Explore Now
               </Link>
@@ -113,22 +115,21 @@ const ExploreCategories = () => {
         >
           <div className="card" style={cardStyle}>
             <img
-              src="path_to_mystery_image.jpg"
+              src={Mystery}
               className="card-img-top"
               alt="Mystery"
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge" style={{ background: "#17a2b8" }}>
+              <span className="badge mb-3 "  style={{ background: "#3f929a" }}>
                 Mystery
               </span>
-              <h5 className="card-title fw-bold mb-0">Unsolved Mysteries</h5>
-              <p className="card-text mb-0">Unravel the secrets behind hidden truths.</p>
+              <h5 className="card-title fw-bold mb-0 text-center">Unsolved Mysteries</h5>
+              <p className="card-text mb-2 text-center">Unravel the secrets behind hidden truths.</p>
               <Link
                 to="/mystery"
-                className="btn text-white text-decoration-none"
-                style={{ background: "#17a2b8" }}
-              >
+                className="btn text-white text-decoration-none mt-2"
+                style={{ background: "#3f929a" }}              >
                 Explore Now
               </Link>
             </div>
@@ -144,22 +145,21 @@ const ExploreCategories = () => {
         >
           <div className="card" style={cardStyle}>
             <img
-              src="path_to_comedy_image.jpg"
+              src={Comedy}
               className="card-img-top"
               alt="Comedy"
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge" style={{ background: "#28a745" }}>
+              <span className="badge mb-3"  style={{ background: "#3f929a" }}>
                 Comedy
               </span>
-              <h5 className="card-title fw-bold mb-0">Laugh Out Loud</h5>
-              <p className="card-text mb-0">Experience hilarious adventures and jokes.</p>
+              <h5 className="card-title fw-bold mb-0 text-center">Laugh Out Loud</h5>
+              <p className="card-text mb-2 text-center">Experience hilarious adventures and jokes.</p>
               <Link
                 to="/comedy"
-                className="btn text-white text-decoration-none"
-                style={{ background: "#28a745" }}
-              >
+                className="btn text-white text-decoration-none mt-2"
+                style={{ background: "#3f929a" }}              >
                 Explore Now
               </Link>
             </div>
