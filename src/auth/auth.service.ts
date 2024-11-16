@@ -27,7 +27,6 @@ export class AuthService {
     });
 
     try {
-      console.log(`User ${"user.username"} created successfully`); //for debugging while testing API endpoint
       return await this.usersRepository.save(user);
     } catch (error) {
       // Handle duplicate username or email errors
@@ -45,7 +44,6 @@ export class AuthService {
     if (user && (password === user.password)) { //&& (await bcrypt.compare(password, user.password))
       const payload = { username };
       const accessToken = await this.jwtService.sign(payload); // Generate JWT
-      console.log(`User ${user.username} logged in successfully`); //for debugging while testing API endpoint
       return { accessToken };
     } else {
       throw new UnauthorizedException('Invalid credentials');
