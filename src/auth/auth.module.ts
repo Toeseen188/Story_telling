@@ -5,13 +5,10 @@ import { UsersModule } from '../users/users.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt.strategy';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '../entities/user.entity'
 
 @Module({
   imports: [
     UsersModule, 
-    TypeOrmModule.forFeature([User]),
     PassportModule, 
     JwtModule.register({
       secret: 'your-secret-key', // Replace with a strong secret key
