@@ -45,6 +45,7 @@ export class AuthService {
     if (user && (password === user.password)) { //&& (await bcrypt.compare(password, user.password))
       const payload = { username };
       const accessToken = await this.jwtService.sign(payload); // Generate JWT
+      console.log(`User ${user.username} logged in successfully`); //for debugging while testing API endpoint
       return { accessToken };
     } else {
       throw new UnauthorizedException('Invalid credentials');
