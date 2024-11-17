@@ -11,5 +11,6 @@ export const AppDataSource = new DataSource({
   password: 'story',
   database: 'my_story_db',
   entities: [Story, User, Comment, Reaction], // we'll add our entities later
+
   synchronize: true, // for development only
 });
