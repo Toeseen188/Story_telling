@@ -10,10 +10,6 @@ export const AppDataSource = new DataSource({
   username: 'my_story_user',
   password: 'story',
   database: 'my_story_db',
-<<<<<<< HEAD
-  entities: [], // we'll add our entities later
-=======
   entities: [Story, User, Comment, Reaction], // we'll add our entities later
->>>>>>> parent of e4b3e78... resolving conflict
   synchronize: true, // for development only
 });
