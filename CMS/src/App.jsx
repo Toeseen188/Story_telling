@@ -12,6 +12,7 @@ import UserLayout from './Components/UserLayout';
 import Signup from './Components/Signup'; 
 import Login from './Components/Login'; 
 import Navbar from './Components/Navbar'; 
+import UserProfile from './Components/Pages/UserProfile';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route path="" element={<HomePage />} />  
               <Route path="dashboard" element={<UserDashboard />} /> 
+              <Route path="Profile" element={<UserProfile />} /> 
             </Route>
 
             {/* User-related routes */}

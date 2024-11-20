@@ -12,7 +12,7 @@ const FeatureIntroduction = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}
-            className="fw-bold display-4 text-secondary mb-3"
+            className="fw-bold display-4 mb-3"
           >
             Introducing Personalized Story Recommendations
           </motion.h2>
@@ -22,7 +22,6 @@ const FeatureIntroduction = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.5}} 
-            className=" lead text-secondary"
           >
             Discover stories that match your unique taste! Our new recommendation engine suggests books, 
             articles, and stories based on your reading preferences. Get personalized suggestions and never 
@@ -35,7 +34,7 @@ const FeatureIntroduction = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }} 
           >
-            <a href="/explore" className="btn btn-primary btn-lg mt-2">
+            <a href="/explore" className=" btn-lg mt-2 btn text-white mt-4 rounded-pill border-none" style={{background:' #ed9e59 '}}>
               Explore Recommendations
             </a>
           </motion.div>

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import BgVideo from "../../assets/video/BgV.mp4";
 import ExploreCategories from "./ExploreCategories";
 import FeatureIntroduction from "./FeatureIntroduction.jsx";
+import CommunitySection from "./CommunitySection.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -64,8 +65,8 @@ const HomePage = () => {
             <motion.button
               type="button"
               onClick={() => navigate('/user/signup')}
-              className="btn text-white mt-4 rounded-pill border"
-              style={{ background: "#3f929a" }}
+              className="btn text-white mt-4 rounded-pill border-none"
+              style={{ background: "#ed9e59" }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.6 }}
@@ -78,6 +79,7 @@ const HomePage = () => {
 
       <FeatureIntroduction />
       <ExploreCategories/>
+      <CommunitySection/>
     </>
   );
 };

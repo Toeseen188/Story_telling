@@ -108,7 +108,7 @@ h2 {
 .custom-navbar {
   padding: 0.5rem 1rem; 
   height: 60px; 
-  background:#81a182;
+  background:#1b1931;
 
 }
 .custom-logo {
@@ -121,14 +121,14 @@ h2 {
   color: #333; 
 }
 .navbar .navbar-toggler-icon {
-  background-color: #333; 
+  background-color: #f6694e; 
 }
 .navbar .navbar-nav .nav-link {
-  /* color: #fff;  */
+  color: #fff; 
   font-size: 1.1rem; 
   font-weight: 600;
 }
-.navbar .navbar-nav .nav-link:hover{
+.navbar .navbar-nav .nav-link.active{
   color: #fff;
 }
 .navbar-toggler {
@@ -142,15 +142,12 @@ h2 {
   transform: scale(1.05); 
 }
 .nav-item .login-link{
-  border: 1px solid #3f929a ;
+  border: 1px solid#ed9e59 ;
 }
 .nav-item .signup-link{
-  border: 1px solid #3f929a;
-  background-color: #3f929a;
+  background-color: #ed9e59;
 }
-.nav-item .signup-link:hover{
-color: #fff;
-}
+
 .HomePageText {
   font-size: 1.25rem; 
   color: #0e4747;
@@ -448,10 +445,31 @@ h1 {
   height: auto;
   object-fit: cover;
 }
+.community-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #1b1931;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
 
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 
+.community-feature {
+  max-width: 300px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+}
 
-
-
-
-
+.community-feature .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
