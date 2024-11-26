@@ -12,7 +12,11 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     private usersRepository: Repository<User>,
   ) {
     super({
+<<<<<<< HEAD
       secretOrKey: 'your-secret-key', // Replace with a strong secret key
+=======
+      secretOrKey: 'qYHQ6jPyK4xYZ0cD0UafMeJQfRATGP4q9Yzlxxo4IhA=', // strong secret key - generated with "openssl rand -base64 32"
+>>>>>>> b06e39afff7c8bd279492fab17e567b4c10cd262
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     });
   }
