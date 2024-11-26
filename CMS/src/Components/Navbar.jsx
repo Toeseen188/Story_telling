@@ -6,10 +6,12 @@ const Navbar = ({ user, onLogout }) => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top custom-navbar">
       <div className="container-fluid">
-        <Link className="navbar-brand" href="#">
-          <img src={logo} alt="Logo" className="img-fluid w-25 custom-logo" />
+        {/* Logo */}
+        <Link className="navbar-brand" to="/">
+          <img src={logo} alt="Logo" className="img-fluid custom-logo" />
         </Link>
 
+        {/* Toggle Button for Offcanvas */}
         <button
           className="navbar-toggler"
           type="button"
@@ -21,15 +23,16 @@ const Navbar = ({ user, onLogout }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+        {/* Offcanvas Menu */}
         <div
           className="offcanvas offcanvas-end"
-          tabindex="-1"
+          tabIndex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-              StorySphere
+            <h5 className="offcanvas-title text-dark" id="offcanvasNavbarLabel">
+              Enchanted Tale
             </h5>
             <button
               type="button"
@@ -38,50 +41,36 @@ const Navbar = ({ user, onLogout }) => {
               aria-label="Close"
             ></button>
           </div>
-
           <div className="offcanvas-body">
-            <ul className="navbar-nav d-flex justify-content-center flex-grow-1 pe-3">
-              <li className="nav-item mx-3">
+            <ul className="navbar-nav d-flex justify-content-center flex-grow-1">
+              <li className="nav-item ms-auto">
                 <Link to="/" className="nav-link active" aria-current="page">
                   Home
                 </Link>
               </li>
-              <li className="nav-item mx-3">
+              <li className="nav-item mx-5">
                 <Link to="/browse" className="nav-link">
                   Browse Stories
                 </Link>
               </li>
               <li className="nav-item mx-3">
-                <Link to="/about" className="nav-link">
+                <Link
+                  href="#about"
+                  className="nav-link"  
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById('about')
+                      .scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   About
                 </Link>
               </li>
-            </ul>
-
-            {/* Conditional rendering for logged-in users */}
-            <ul className="navbar-nav ms-auto">
-              {user ? (
-                <>
-                  <li className="nav-item">
-                    <Link to="/profile" className="nav-link">
-                      {user.name || 'Profile'}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <button
-                      onClick={onLogout}
-                      className="nav-link btn btn-link text-white"
-                    >
-                      Logout
-                    </button>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li className="nav-item">
+              <li className="nav-item ms-auto ">
                     <Link
                       to="/user/login"
-                      className="nav-link login-link rounded-pill px-4"
+                      className="nav-link login-link rounded-pill px-4 py-2 "
                     >
                       Login
                     </Link>
@@ -89,14 +78,12 @@ const Navbar = ({ user, onLogout }) => {
                   <li className="nav-item">
                     <Link
                       to="/user/signup"
-                      className="nav-link signup-link rounded-pill px-4"
+                      className="nav-link signup-link rounded-pill px-3 mt-1  "
                     >
                       Sign Up
                     </Link>
                   </li>
-                </>
-              )}
-            </ul>
+            </ul>        
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import CommunityFeature from './CommunityFeature';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { fadeIn } from "../../variants"; 
 
 const CommunitySection = () => {
   const navigate=useNavigate()
@@ -25,20 +27,31 @@ const CommunitySection = () => {
   return (
     <section className="community-section py-5 mt-5">
       <div className="container text-center">
-        <h2 className="mb-4">Join the Enchanted Tale Community</h2>
+        <motion.h2
+         variants={fadeIn("up", 0.5)}
+         initial="hidden"
+         whileInView="show"
+         viewport={{ once: false, amount: 0.5}}
+        className="mb-4">Join the Enchanted Tale Community</motion.h2>
         <div className="row">
           {features.map((feature, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
               <CommunityFeature 
                 title={feature.title} 
                 description={feature.description} 
-                icon={feature.icon} 
+               icon={feature.icon}  
+                
               />
             </div>
           ))}
         </div>
       </div>
-      <button onClick={()=>navigate('/user/signup')} className="btn-lg mt-2 btn text-white mt-4 px-4 rounded-pill border-none" style={{background:' #ed9e59 '}}>Join Community</button>
+      <motion.button
+       variants={fadeIn("up", 0.5)}
+       initial="hidden"
+       whileInView="show"
+       viewport={{ once: false, amount: 0.3}}
+      onClick={()=>navigate('/user/signup')} className="btn-lg mt-2 btn text-white mt-4 px-4 rounded-pill border-none" style={{background:' #274d60'}}>Join Community</motion.button>
     </section>
   );
 };

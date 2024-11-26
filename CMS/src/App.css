@@ -106,22 +106,54 @@ h2 {
   }
 }
 .custom-navbar {
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1.5rem; 
   height: 60px; 
-  background:#1b1931;
+  background:#6ba3be;
 
 }
 .custom-logo {
-  height: auto; 
-  max-height: 40px; 
+  height: auto;
+  max-height: 150px; 
+  max-width: 100%;   
+  width: auto;       
+  object-fit: contain; 
 }
+
+
+@media (max-width: 768px) {
+  .custom-logo {
+    max-height: 60px;
+  }
+  .custom-navbar{
+    height: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-logo {
+    max-height: 60px;
+  }
+  .custom-navbar{
+    height: 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  .custom-logo {
+    max-height: 60px; 
+  }
+  .custom-navbar{
+    height: 70px;
+  }
+}
+
 .navbar-nav .nav-item .nav-link {
   font-size: 0.9rem;
   padding: 0.25rem 0.5rem; 
   color: #333; 
 }
 .navbar .navbar-toggler-icon {
-  background-color: #f6694e; 
+  background-color:#274d60; 
 }
 .navbar .navbar-nav .nav-link {
   color: #fff; 
@@ -129,8 +161,9 @@ h2 {
   font-weight: 600;
 }
 .navbar .navbar-nav .nav-link.active{
-  color: #fff;
+  color: #fff; 
 }
+
 .navbar-toggler {
   padding: 0.25rem 0.5rem; 
 }
@@ -142,10 +175,10 @@ h2 {
   transform: scale(1.05); 
 }
 .nav-item .login-link{
-  border: 1px solid#ed9e59 ;
+  background:#274d60;
 }
 .nav-item .signup-link{
-  background-color: #ed9e59;
+  border:1px solid #274d60;
 }
 
 .HomePageText {
@@ -440,18 +473,14 @@ h1 {
   background-color: #33868d;
 }
 
-.feature-intro-section img {
+/* .feature-intro-section img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-}
+} */
 .community-section {
   padding: 2rem;
   text-align: center;
-  background-color: #1b1931;
-  color: #fff;
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
 }
 
 .features-container {
@@ -464,7 +493,7 @@ h1 {
 .community-feature {
   max-width: 300px;
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 8px;
   text-align: left;
 }

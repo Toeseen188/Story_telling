@@ -59,7 +59,7 @@ const ExploreCategories = () => {
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge mb-3" style={{ background: "#1b1931" }}>
+              <span className="badge mb-3 border text-dark">
                 Romance
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Romantic Escapes</h5>
@@ -67,7 +67,7 @@ const ExploreCategories = () => {
               <Link
                 to="/romance"
                 className="btn text-white text-decoration-none mt-2"
-                style={{ background: "#ed9e59" }}
+                style={{ background: "#274d60" }}
               >
                 Explore Now
               </Link>
@@ -90,7 +90,7 @@ const ExploreCategories = () => {
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge mb-3"  style={{ background: "#1b1931" }}>
+              <span className="badge mb-3 border text-dark"  >
                 Adventure
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Epic Quests</h5>
@@ -98,7 +98,7 @@ const ExploreCategories = () => {
               <Link
                 to="/adventure"
                 className="btn text-white text-decoration-none mt-2"
-                 style={{ background: "#ed9e59" }}
+                 style={{ background: "#274d60" }}
               >
                 Explore Now
               </Link>
@@ -121,7 +121,7 @@ const ExploreCategories = () => {
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge mb-3 "  style={{ background: "#1b1931" }}>
+              <span className="badge mb-3  border text-dark"  >
                 Mystery
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Unsolved Mysteries</h5>
@@ -129,7 +129,7 @@ const ExploreCategories = () => {
               <Link
                 to="/mystery"
                 className="btn text-white text-decoration-none mt-2"
-                style={{ background: "#ed9e59" }}              >
+                style={{ background: "#274d60" }}              >
                 Explore Now
               </Link>
             </div>
@@ -151,15 +151,15 @@ const ExploreCategories = () => {
               style={imageStyle}
             />
             <div className="card-body" style={cardBodyStyle}>
-              <span className="badge mb-3"  style={{ background: "#1b1931" }}>
-                Comedy
+              <span className="badge mb-3 border text-dark"  >
+                Fantasy
               </span>
               <h5 className="card-title fw-bold mb-0 text-center">Magical Realms</h5>
               <p className="card-text mb-2 text-center">Quests, magic, and mythical creatures</p>
               <Link
                 to="/comedy"
                 className="btn text-white text-decoration-none mt-2"
-                style={{ background: "#ed9e59 " }}              >
+                style={{ background: "#274d60" }}              >
                 Explore Now
               </Link>
             </div>
