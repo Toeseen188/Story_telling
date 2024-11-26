@@ -31,8 +31,9 @@ let AuthService = class AuthService {
             password: password,
         });
         try {
-            console.log(`User ${user.username} created successfully`);
-            return await this.usersRepository.save(user);
+            const savedUser = await this.usersRepository.save(user);
+            console.log(savedUser);
+            return savedUser;
         }
         catch (error) {
             if (error.code === '23505') {

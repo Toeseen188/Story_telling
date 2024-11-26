@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Swal from 'sweetalert2';  // Import SweetAlert2
 import logo from '../assets/logo.png';
+import axios from 'axios';
 
 // Validation Schema with username instead of firstName
 const validationSchema = yup.object({
@@ -32,35 +33,48 @@ const Signup = ({ setUser }) => {
       email: '',
       password: ''
     },
-    onSubmit: (values) => {
-      // Get existing users from localStorage, or initialize as an empty array if none exist
-      const existingUsers = JSON.parse(localStorage.getItem("userData")) || [];
-      
-      // Check if the user already exists (based on username or email)
-      const userExists = existingUsers.some(user => user.username === values.username || user.email === values.email);
-      
-      if (userExists) {
+    onSubmit: async (values) => {
+      try {
+        const response = await axios.post('http://localhost:3001/auth/signup', values);
+
+        if (response.status === 201) {
+          const data = await response.data; // Parse the response data
+          setUser(data); // Update the user state with the received data
+
+          Swal.fire({
+            title: 'Success!',
+            text: 'User registered successfully.',
+            icon: 'success',
+            confirmButtonText: 'Proceed to Login',
+          }).then(() => {
+            navigate('/user/login');
+          });
+        } else if (response.status === 401 ) {
+
+            Swal.fire({
+              title: 'Error!',
+              text: 'Username or email already exists.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+            });
+          } else {
+            const errorData = response.data;
+            Swal.fire({
+              title: 'Error!',
+              text: errorData.message || 'Failed to register user.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+            });
+          }    
+      } catch (error) {
+        console.error('Signup error:', error);
         Swal.fire({
           title: 'Error!',
-          text: 'User already exists. Please choose a different username or email.',
+          text: 'An error occurred during signup.',
           icon: 'error',
-          confirmButtonText: 'Okay',
+          confirmButtonText: 'OK',
         });
-        return;
       }
-      existingUsers.push(values);
-      localStorage.setItem('userData', JSON.stringify(existingUsers));
-      localStorage.setItem('user', JSON.stringify(values));
-      setUser(values);
-
-      Swal.fire({
-        title: 'Success!',
-        text: 'User registered successfully.',
-        icon: 'success',
-        confirmButtonText: 'Proceed to Login',
-      }).then(() => {
-        navigate('/user/login');
-      });
     },
     validationSchema
   });

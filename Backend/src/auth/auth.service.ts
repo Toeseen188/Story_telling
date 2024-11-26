@@ -27,8 +27,9 @@ export class AuthService {
     });
 
     try {
-      console.log(`User ${user.username} created successfully`); //for debugging while testing API endpoint
-      return await this.usersRepository.save(user);
+      const savedUser = await this.usersRepository.save(user);
+      console.log(savedUser);
+      return savedUser;
     } catch (error) {
       // Handle duplicate username or email errors
       if (error.code === '23505') {
