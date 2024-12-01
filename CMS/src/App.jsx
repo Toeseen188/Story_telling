@@ -12,6 +12,10 @@ import UserLayout from './Components/UserLayout';
 import Signup from './Components/Signup'; 
 import Login from './Components/Login'; 
 import Navbar from './Components/Navbar'; 
+import ForgotPassword from './Components/Pages/ForgotPassword';
+import SetNewPassword from './Components/Pages/SetNewPassword';
+import ResetPassword from './Components/Pages/ResetPassword';
+import UserNavbar from './Components/UserNavbar';
 
 const App = () => {
   const [user, setUser] = useState(null); 
@@ -32,6 +36,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route path="" element={<HomePage />} />  
               <Route path="dashboard" element={<UserDashboard user={user} />} /> 
+              <Route path="userNavbar" element={<UserNavbar/>} /> 
             </Route>
 
             {/* User-related routes */}
@@ -43,6 +48,18 @@ const App = () => {
               <Route 
                 path="login" 
                 element={<Login setUser={setUser} />} 
+              />  
+              <Route 
+                path="forgotPassword" 
+                element={<ForgotPassword/>} 
+              />  
+                <Route 
+                  path="resetPassword" 
+                  element={<ResetPassword/>} 
+                />  
+              <Route 
+                path="setNewPassword" 
+                element={<SetNewPassword/>} 
               />  
             </Route>
           </Routes>

@@ -80,9 +80,9 @@ const Signup = ({ setUser }) => {
   });
 
   return (
-    <div className="signup-container">
-      <div className="glassmorphism-card">
-        <div className='d-flex justify-content-center'>
+    <div className="signup-container d-flex justify-content-center align-items-center">
+      <div className="glassmorphism-card p-4 w-100" style={{ maxWidth: '400px' }}>
+      <div className='d-flex justify-content-center mb-3'>
           <img
             src={logo}
             alt="ET Logo"
@@ -142,7 +142,7 @@ const Signup = ({ setUser }) => {
           </div>
 
           <button type="submit" className='mt-3'>Sign Up</button>
-          <p className='mt-3 text-center' style={{ color: "#3F5C40" }}>Already have an account? <Link to="/user/login" className='SignInLink fw-bold'>Sign in</Link></p>
+          <p className='mt-3 text-center' style={{ color: "#274d60" }}>Already have an account? <Link to="/user/login" className='SignInLink fw-bold'>Sign in</Link></p>
         </form>
       </div>
     </div>
