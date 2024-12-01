@@ -49,24 +49,17 @@ const Signup = ({ setUser }) => {
           }).then(() => {
             navigate('/user/login');
           });
-        } else if (response.status === 401 ) {
-
-            Swal.fire({
-              title: 'Error!',
-              text: 'Username or email already exists.',
-              icon: 'error',
-              confirmButtonText: 'OK',
-            });
-          } else {
-            const errorData = response.data;
-            Swal.fire({
-              title: 'Error!',
-              text: errorData.message || 'Failed to register user.',
-              icon: 'error',
-              confirmButtonText: 'OK',
-            });
-          }    
+        }
       } catch (error) {
+        if (error.response && error.response.status === 401 ) {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Username or email already exists.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          });
+          return;
+        }
         console.error('Signup error:', error);
         Swal.fire({
           title: 'Error!',
