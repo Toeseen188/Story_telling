@@ -18,7 +18,6 @@ import ResetPassword from './Components/Pages/ResetPassword';
 import UserNavbar from './Components/UserNavbar';
 
 const App = () => {
-  const [user, setUser] = useState(null); 
   const [splashEnded, setSplashEnded] = useState(false);
 
   const handleSplashEnd = () => {
@@ -35,7 +34,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="" element={<HomePage />} />  
-              <Route path="dashboard" element={<UserDashboard user={user} />} /> 
+              <Route path="dashboard" element={<UserDashboard />} /> 
               <Route path="userNavbar" element={<UserNavbar/>} /> 
             </Route>
 
@@ -43,11 +42,11 @@ const App = () => {
             <Route path="/user" element={<UserLayout />}>
               <Route 
                 path="signup" 
-                element={<Signup setUser={setUser} />} 
+                element={<Signup/>} 
               />  
               <Route 
                 path="login" 
-                element={<Login setUser={setUser} />} 
+                element={<Login/>} 
               />  
               <Route 
                 path="forgotPassword" 
