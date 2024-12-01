@@ -43,17 +43,15 @@ let AuthService = class AuthService {
         }
     }
     async signIn(createUserDto) {
-        const { username, password } = createUserDto;
-        const user = await this.usersRepository.findOneBy({ username });
-        if (user && (password === user.password)) {
-            const payload = { username };
-            const accessToken = await this.jwtService.sign(payload);
-            console.log(`User ${user.username} logged in successfully`);
-            return { accessToken };
-        }
-        else {
+        const { email, password } = createUserDto;
+        const user = await this.usersRepository.findOneBy({ email });
+        if (!user || !(password === user.password)) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
+        const payload = { email };
+        const accessToken = await this.jwtService.sign(payload);
+        console.log(`User ${user.email} logged in successfully`);
+        return { accessToken };
     }
 };
 exports.AuthService = AuthService;

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Swal from 'sweetalert2';  
 import logo from '../assets/logo.png';
+import axios from 'axios';
 
 // Validation schema for login with email
 const validationSchema = yup.object({
@@ -25,35 +26,40 @@ const Login = ({ setUser }) => {
       email: '', 
       password: ''
     },
-    onSubmit: (values) => {
-      // Get existing users from localStorage, or initialize as an empty array if none exist
-      const existingUsers = JSON.parse(localStorage.getItem("userData")) || [];
-      
-      // Check if the user exists based on the email and password
-      const user = existingUsers.find(user => 
-        user.email === values.email && user.password === values.password
-      );
-
-      if (user) {
-        localStorage.setItem('user', JSON.stringify(user));
-        setUser(user);
-
-        Swal.fire({
-          title: 'Success!',
-          text: 'Login successful.',
-          icon: 'success',
-          confirmButtonText: 'Proceed to Dashboard',
-        }).then(() => {
-          navigate('/dashboard');
-        });
-      } else {
-        // If no matching user found or credentials don't match
-        Swal.fire({
-          title: 'Error!',
-          text: 'Invalid email or password.',
-          icon: 'error',
-          confirmButtonText: 'Try Again',
-        });
+    onSubmit: async (values) => {
+      try {
+        const response = await axios.post('http://localhost:3001/auth/signin', values);
+    
+        if (response.status === 201) { // Assuming successful login returns 200 OK
+          const data = response.data; // Assuming the response contains user data and token
+          setUser(data);
+    
+          Swal.fire({
+            title: 'Success!',
+            text: 'Login successful.',
+            icon: 'success',
+            confirmButtonText: 'Proceed to Dashboard',
+          }).then(() => {
+            navigate('/dashboard');
+          });
+        } 
+      } catch (error) {
+        if (error.response && error.response.status === 401 ) {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Invalid Credentials, Please try again.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          });
+          return;
+        }
+        console.error('Login Error', error);
+          Swal.fire({
+            title: 'Error',
+            text: 'Error during log in. Please try again',
+            icon: 'error'
+          });
+        
       }
     },
     validationSchema
