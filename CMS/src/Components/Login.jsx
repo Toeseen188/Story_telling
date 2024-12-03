@@ -29,7 +29,7 @@ const Login = () => {
 
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('http://localhost:3001/auth/signin', values);
+        const response = await axios.post('http://localhost:3001/auth/login', values);
     
         if (response.status === 201) { // Assuming successful login returns 200 OK
           const data = response.data; // Assuming the response contains user data and token
@@ -130,7 +130,7 @@ const Login = () => {
 
           <p className="mt-3 text-center" style={{ color: '#274d60' }}>
             Don't have an account?{' '}
-            <Link to="/user/signup" className="SignInLink fw-bold text-decoration-none">
+            <Link to="/user/signup" className="SignInLink fw-bold text-decoration-none" style={{color:'#274d60'}}>
               Sign up
             </Link>
           </p>

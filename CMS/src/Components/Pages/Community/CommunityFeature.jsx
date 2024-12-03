@@ -1,23 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fadeIn } from '../../../Utils/variants';
 
-const fadeIn = (direction = "up", duration = 0.3) => {
-  return {
-    hidden: {
-      opacity: 0,
-      y: direction === "up" ? 20 : -20, 
-    },
-    show: {
-      opacity: 1,
-      y: 0, 
-      transition: {
-        duration: duration,
-        type: "spring",
-        stiffness: 100, 
-      },
-    },
-  };
-};
+
 
 const CommunityFeature = ({ title, description, icon }) => {
   return (

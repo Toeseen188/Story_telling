@@ -135,7 +135,7 @@ const Signup = ({ setUser }) => {
           </div>
 
           <button type="submit" className='mt-3'>Sign Up</button>
-          <p className='mt-3 text-center' style={{ color: "#274d60" }}>Already have an account? <Link to="/user/login" className='SignInLink fw-bold'>Sign in</Link></p>
+          <p className='mt-3 text-center' style={{ color: "#274d60" }}>Already have an account? <Link to="/user/login" className='SignInLink fw-bold' style={{color:'#274d60'}}>Sign in</Link></p>
         </form>
       </div>
     </div>

@@ -1,13 +1,15 @@
 import React from "react";
 import { MdArrowForward } from "react-icons/md";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import BgVideo from "../../assets/video/BgV.mp4";
-import ExploreCategories from "./ExploreCategories";
-import FeatureIntroduction from "./FeatureIntroduction.jsx";
-import CommunitySection from "./CommunitySection.jsx";
-import About from "./About.jsx";
-import Footer from "./footer.jsx";
+import { motion } from 'framer-motion';
+import { fadeIn } from '../../../Utils/variants.jsx';
+import { useNavigate } from 'react-router-dom';
+import BgVideo from "../../../assets/video/BgV.mp4";
+import ExploreCategories from "../Categories/ExploreCategories.jsx";
+import FeatureIntroduction from "../FeatureIntroduction.jsx";
+import CommunitySection from "../Community/CommunitySection.jsx";
+import About from "../About.jsx";
+import Footer from "../Footer.jsx";
+import CategoryCard from "../Categories/CategoryCard.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -35,29 +37,32 @@ const HomePage = () => {
         <div className="row w-100 text-center content mt-5 pt-3">
           <div className="col-12 ">
             <motion.p
-              className="fw-bold display-4 text-white mb-2"
+              className="fw-bold display-4 text-white mb-2 "
               style={{ color: "#084949" }}
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              variants={fadeIn("down", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
             >
               Welcome to Enchanted Tales
             </motion.p>
 
             <motion.p
               className="display-6 text-white"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2 }}
+              variants={fadeIn("down", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.6 }}
             >
               Where imagination knows no bounds
             </motion.p>
             
             <motion.p
               className="fs-5 text-white"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.4 }}
+              variants={fadeIn("down", 0.5)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.5 }}
             >
               Ready to escape reality? Step into a world of infinite possibilities.
             </motion.p>
@@ -67,13 +72,14 @@ const HomePage = () => {
             <motion.button
               type="button"
               onClick={() => navigate('/user/signup')}
-              className="btn text-white mt-4 rounded-pill border-none"
+              className="btn text-white mt-4 rounded-pill border-none px-4 py-2 fs-5"
               style={{ background: "#274d60" }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.6 }}
+              variants={fadeIn("down", 0.6)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.4 }}
             >
-              Dive into stories <MdArrowForward />
+              Start your journey <MdArrowForward />
             </motion.button>
           </div>
         </div>
@@ -81,6 +87,7 @@ const HomePage = () => {
 
       <FeatureIntroduction />
       <ExploreCategories/>
+      <CategoryCard/>
       <About/>
       <CommunitySection/>
       <Footer/>

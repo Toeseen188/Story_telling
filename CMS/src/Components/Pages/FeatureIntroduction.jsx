@@ -13,16 +13,17 @@ const FeatureIntroduction = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}
-            className="fw-bold display-4 mb-3"
+            className="fw-bold display-4 mb-3 text-secondary"
           >
             Introducing Personalized Story Recommendations
           </motion.h2>
           
           <motion.p
-            variants={fadeIn("up", 0.5)}
+            variants={fadeIn("up", 0.3)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.5}} 
+            viewport={{ once: false, amount: 0.7}} 
+            className='text-secondary lead'
           >
             Discover stories that match your unique taste! Our new recommendation engine suggests books, 
             articles, and stories based on your reading preferences. Get personalized suggestions and never 
@@ -30,10 +31,10 @@ const FeatureIntroduction = () => {
           </motion.p>
           
           <motion.div
-            variants={fadeIn("up", 0.5)}
+            variants={fadeIn("up", 0.3)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.3 }} 
+            viewport={{ once: false, amount: 0.7 }} 
           >
             <a href="/explore" className=" btn-lg mt-2 btn text-white mt-4 rounded-pill border-none" style={{background:' #274d60'}}>
               Explore Recommendations
@@ -42,10 +43,10 @@ const FeatureIntroduction = () => {
         </div>
             <div className="col-md-6 text-center  mt-md-0">
           <motion.img
-            variants={fadeIn("up", 0.7)}
+            variants={fadeIn("up", 0.3)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.3 }} 
+            viewport={{ once: false, amount: 0.7 }} 
             src={Reading} 
             alt="Feature Illustration"
             className="img-fluid rounded-3 "

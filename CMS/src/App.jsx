@@ -5,16 +5,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Layout from './Components/Layout'; 
 import 'bootstrap/dist/css/bootstrap.css';
-import HomePage from './Components/Pages/HomePage'; 
+import HomePage from './Components/Pages/Home/HomePage'; 
 import UserDashboard from './Components/Pages/UserDashboard'; 
 import SplashScreen from './Components/SplashScreen/SplashScreen';
 import UserLayout from './Components/UserLayout'; 
 import Signup from './Components/Signup'; 
 import Login from './Components/Login'; 
 import Navbar from './Components/Navbar'; 
-import ForgotPassword from './Components/Pages/ForgotPassword';
-import SetNewPassword from './Components/Pages/SetNewPassword';
-import ResetPassword from './Components/Pages/ResetPassword';
+import ForgotPassword from './Components/Pages/Passwords/ForgotPassword';
+import SetNewPassword from './Components/Pages/Passwords/SetNewPassword';
+import ResetPassword from './Components/Pages/Passwords/ResetPassword';
 import UserNavbar from './Components/UserNavbar';
 
 const App = () => {
