@@ -49,20 +49,20 @@ const HomePage = () => {
 
             <motion.p
               className="display-6 text-white"
-              variants={fadeIn("down", 0.4)}
+              variants={fadeIn("down", 0.3)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.6 }}
+        viewport={{ once: false, amount: 0.7}}
             >
               Where imagination knows no bounds
             </motion.p>
             
             <motion.p
               className="fs-5 text-white"
-              variants={fadeIn("down", 0.5)}
+              variants={fadeIn("down", 0.3)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.7 }}
             >
               Ready to escape reality? Step into a world of infinite possibilities.
             </motion.p>
@@ -74,10 +74,10 @@ const HomePage = () => {
               onClick={() => navigate('/user/signup')}
               className="btn text-white mt-4 rounded-pill border-none px-4 py-2 fs-5"
               style={{ background: "#274d60" }}
-              variants={fadeIn("down", 0.6)}
+              variants={fadeIn("down", 0.3)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.7 }}
             >
               Start your journey <MdArrowForward />
             </motion.button>
