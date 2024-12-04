@@ -9,10 +9,10 @@ const NavbarUser = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div className="container">
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <Link className="navbar-brand d-flex align-items-center" to="/">
           <BookOpen className="h-8 w-8 text-primary" />
           <span className="ms-2 fs-4 fw-bold text-dark">Enchanted Tale</span>
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
