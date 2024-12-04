@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../../../src/assets/logo.png';
 
-const Navbar = ({ user, onLogout }) => {
+const NavbarGuest = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top custom-navbar">
       <div className="container-fluid">
@@ -91,4 +91,4 @@ const Navbar = ({ user, onLogout }) => {
   );
 };
 
-export default Navbar;
+export default NavbarGuest;
