@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../Components/Layouts/Layout';
 import UserLayout from '../Components/Layouts/UserLayout';
-import { useAuth } from '../Components/Context/AuthContext';
+import useProtectedRoute from '../Hook/UseProtectedRoute';
 
 // Pages
 import HomePage from '../Components/Pages/Home/HomePage';
@@ -16,15 +16,13 @@ import SetNewPassword from '../Components/Pages/Passwords/SetNewPassword';
 import ResetPassword from '../Components/Pages/Passwords/ResetPassword';
 import NotFound from '../Components/Pages/Error/NotFound';
 
-// Protected Route Component
+// Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? children : <Navigate to="/user/login" />;
+  const isAuthenticated = useProtectedRoute(); // Ensure route protection
+  return isAuthenticated ? children : null; // Only render children if authenticated
 };
 
 const AppRoutes = () => {
-  const { isAuthenticated } = useAuth();
-
   return (
     <Routes>
       {/* Auth Routes */}
@@ -38,12 +36,7 @@ const AppRoutes = () => {
 
       {/* Main Routes */}
       <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={
-            isAuthenticated ? <FeaturedBooks /> : <HomePage />
-          }
-        />
+        <Route index element={<HomePage />} />
         <Route
           path="dashboard"
           element={
