@@ -29,7 +29,6 @@ const AppRoutes = () => {
     <Routes>
       {/* Auth Routes */}
       <Route path="/user" element={<UserLayout />}>
-        <Route index element={<Navigate to="/user/login" />} />
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPassword />} />
