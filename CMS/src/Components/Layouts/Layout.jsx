@@ -9,8 +9,11 @@ const Layout = () => {
   
   return (
     <div>
+      {/* Render appropriate navbar based on authentication status */}
       {isAuthenticated ? <NavbarUser /> : <NavbarGuest />}
-      <main className="max-w-7xl mx-auto px-4 py-6">
+
+      {/* Main content area */}
+      <main className=" py-4">
         <Outlet />
       </main>
     </div>

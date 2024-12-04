@@ -4,7 +4,7 @@ import { fadeIn } from "../../variants";
 
 const About = () => {
   return (
-    <div id='about' className="container-fluid my-5 about-section">
+    <div id='about' className="container my-5 about-section">
       <div className="">
         <motion.h2
          variants={fadeIn("up", 0.3)}

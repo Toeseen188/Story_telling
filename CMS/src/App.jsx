@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AuthProvider } from './Components/Context/AuthContext';
 import AppRoutes from './Routes/AppRoutes';
-import SplashScreen from './components/SplashScreen/SplashScreen';
+import SplashScreen from './Components/SplashScreen/SplashScreen';
 
 // Styles
 import './App.css';

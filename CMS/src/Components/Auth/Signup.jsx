@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Swal from 'sweetalert2';  // Import SweetAlert2
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import axios from 'axios';
 
 // Validation Schema with username instead of firstName
