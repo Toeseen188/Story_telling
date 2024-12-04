@@ -52,11 +52,11 @@ const NavbarUser = () => {
             >
               <img
                 src={user?.avatar}
-                alt={user?.name}
+                alt={user?.Username}
                 className="rounded-circle me-2"
                 style={{ width: '32px', height: '32px' }}
               />
-              <span className="text-dark">{user?.name}</span>
+              <span className="text-dark">{user?.Username}</span>
             </button>
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
               <li>
