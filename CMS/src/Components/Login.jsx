@@ -31,10 +31,9 @@ const Login = () => {
       try {
         const response = await axios.post('http://localhost:3001/auth/signin', values);
     
-        if (response.status === 201) { // Assuming successful login returns 200 OK
-          const data = response.data; // Assuming the response contains user data and token
-          setUser(data);
-    
+        if (response.status === 201) { // Assuming successful login returns 201 OK
+          const { accessToken } = response.data;
+          localStorage.setItem('token', accessToken);
           Swal.fire({
             title: 'Success!',
             text: 'Login successful.',

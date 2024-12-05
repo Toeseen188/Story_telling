@@ -24,7 +24,7 @@ const validationSchema = yup.object({
     .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
 });
 
-const Signup = ({ setUser }) => {
+const Signup = () => {
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -38,9 +38,7 @@ const Signup = ({ setUser }) => {
         const response = await axios.post('http://localhost:3001/auth/signup', values);
 
         if (response.status === 201) {
-          const data = await response.data; // Parse the response data
-          setUser(data); // Update the user state with the received data
-
+         
           Swal.fire({
             title: 'Success!',
             text: 'User registered successfully.',

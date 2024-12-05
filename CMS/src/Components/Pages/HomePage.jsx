@@ -7,7 +7,7 @@ import ExploreCategories from "./ExploreCategories";
 import FeatureIntroduction from "./FeatureIntroduction.jsx";
 import CommunitySection from "./CommunitySection.jsx";
 import About from "./About.jsx";
-import Footer from "./footer.jsx";
+import Footer from "./Footer.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
