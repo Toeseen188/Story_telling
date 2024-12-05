@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { MdArrowBack} from "react-icons/md";
 import { FaSyncAlt } from 'react-icons/fa';
 
-
-
 const SetNewPassword = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");

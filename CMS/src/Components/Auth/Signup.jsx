@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Swal from 'sweetalert2';  // Import SweetAlert2
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import axios from 'axios';
 
 // Validation Schema with username instead of firstName
@@ -133,7 +133,7 @@ const Signup = () => {
           </div>
 
           <button type="submit" className='mt-3'>Sign Up</button>
-          <p className='mt-3 text-center' style={{ color: "#274d60" }}>Already have an account? <Link to="/user/login" className='SignInLink fw-bold'>Sign in</Link></p>
+          <p className='mt-3 text-center' style={{ color: "#274d60" }}>Already have an account? <Link to="/user/login" className='SignInLink fw-bold' style={{color:'#274d60'}}>Sign in</Link></p>
         </form>
       </div>
     </div>
